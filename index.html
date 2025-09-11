@@ -610,14 +610,15 @@
             color: white;
             text-align: center;
             padding: 2rem;
+            border-top: 4px solid #e4aa0a;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2rem;
             margin-bottom: 2rem;
             align-items: start;
         }
@@ -627,9 +628,21 @@
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
+            min-height: 200px;
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #e4aa0a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
             font-family: 'Poppins', sans-serif;
             color: #e4aa0a;
             margin-bottom: 1.5rem;
@@ -661,6 +674,11 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .footer-section:not(.footer-logo-section) {
@@ -688,6 +706,10 @@
         }
 
         .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-top: 0.5rem;
             display: flex;
             justify-content: flex-start;
             gap: 1.5rem;
@@ -956,10 +978,6 @@
                 text-align: center;
             }
 
-            .footer-section {
-                align-items: center;
-                text-align: center;
-            }
 
             .footer-section:not(.footer-logo-section) {
                 align-items: center;
@@ -967,11 +985,21 @@
             }
 
             .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-top: 0.5rem;
                 justify-content: center;
                 margin-top: 1rem;
             }
 
             .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #e4aa0a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
                 margin-bottom: 1rem;
                 font-size: 1.1rem;
             }
@@ -1152,7 +1180,7 @@
         /* Customer Reviews Section */
         .reviews {
             padding: 5rem 2rem;
-            background: #2e7237;
+            background: white;
             color: #333;
             position: relative;
         }
@@ -1171,14 +1199,14 @@
         }
 
         .review-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
+            border: 1px solid rgba(46, 114, 55, 0.1);
             padding: 2.5rem;
             border-radius: 25px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .review-card::before {
@@ -1280,7 +1308,7 @@
         }
 
         .contact-form-container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
             text-align: center;
         }
@@ -1289,9 +1317,9 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 30px;
-            margin-top: 3rem;
+            margin-top: 2rem;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
@@ -1352,7 +1380,7 @@
         }
 
         .form-textarea {
-            min-height: 120px;
+            min-height: 80px;
             resize: vertical;
         }
 
@@ -1700,15 +1728,15 @@
     <!-- Customer Reviews Section -->
     <section class="reviews">
         <div class="section-decoration top-left">
-            <i class="fas fa-quote-left" style="font-size: 4rem; color: #e4aa0a;"></i>
+            <i class="fas fa-quote-left" style="font-size: 4rem; color: rgba(46, 114, 55, 0.1);"></i>
         </div>
         <div class="section-decoration bottom-right">
-            <i class="fas fa-heart" style="font-size: 4rem; color: #e4aa0a;"></i>
+            <i class="fas fa-heart" style="font-size: 4rem; color: rgba(46, 114, 55, 0.1);"></i>
         </div>
         
         <div class="reviews-container">
-            <h2 class="section-title scroll-animation" style="color: #e4aa0a;">What Our Customers Say</h2>
-            <p class="scroll-animation" style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">Read what our valued customers have to say about their dining experience at Nilambur Restaurant</p>
+            <h2 class="section-title scroll-animation" style="color: #2e7237;">What Our Customers Say</h2>
+            <p class="scroll-animation" style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Read what our valued customers have to say about their dining experience at Nilambur Restaurant</p>
             
             <div class="reviews-grid">
                 <div class="review-card scroll-animation">
@@ -1719,7 +1747,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="review-text">"The best Kerala food I've had outside of Kerala! The beef roast was absolutely incredible, and the service was exceptional. The free delivery service is a game-changer. Highly recommended!"</p>
+                    <p class="review-text" style="color: #666;">"The best Kerala food I've had outside of Kerala! The beef roast was absolutely incredible, and the service was exceptional. The free delivery service is a game-changer. Highly recommended!"</p>
                     <div class="review-author">
                         <div class="author-avatar">AH</div>
                         <div class="author-info">
@@ -1737,7 +1765,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="review-text">"Authentic flavors that remind me of home! The kappa biryani is unique and delicious. The atmosphere is warm and welcoming, and the staff treats you like family. A true gem in Jubail!"</p>
+                    <p class="review-text" style="color: #666;">"Authentic flavors that remind me of home! The kappa biryani is unique and delicious. The atmosphere is warm and welcoming, and the staff treats you like family. A true gem in Jubail!"</p>
                     <div class="review-author">
                         <div class="author-avatar">SP</div>
                         <div class="author-info">
@@ -1755,7 +1783,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="review-text">"Outstanding food quality and presentation! The fish pollichath was cooked to perfection. The 'pay for what you eat' policy shows their confidence in their food. Will definitely order again!"</p>
+                    <p class="review-text" style="color: #666;">"Outstanding food quality and presentation! The fish pollichath was cooked to perfection. The 'pay for what you eat' policy shows their confidence in their food. Will definitely order again!"</p>
                     <div class="review-author">
                         <div class="author-avatar">MR</div>
                         <div class="author-info">
