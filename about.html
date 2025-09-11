@@ -440,9 +440,24 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 3rem;
             margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            min-height: 200px;
+            justify-content: flex-start;
+        }
+
+        .footer-section:not(.footer-logo-section) {
+            align-items: flex-start;
+            text-align: left;
         }
 
         .footer-section h3 {
@@ -491,12 +506,8 @@
         .social-icons {
             display: flex;
             justify-content: flex-start;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 0.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
         }
 
         .social-icons a {
@@ -557,6 +568,22 @@
 
             .footer-logo {
                 height: 60px;
+            }
+
+            .footer-content {
+                gap: 2rem;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-section:not(.footer-logo-section) {
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                margin-top: 1rem;
             }
         }
 
@@ -689,8 +716,25 @@
         </section>
     </div>
 
-  
+    <div id="footer-placeholder"></div>
 
+    <script>
+        (function() {
+            fetch('footer.html')
+                .then(function(response) { return response.text(); })
+                .then(function(html) {
+                    var placeholder = document.getElementById('footer-placeholder');
+                    if (placeholder) {
+                        placeholder.outerHTML = html;
+                    } else {
+                        document.body.insertAdjacentHTML('beforeend', html);
+                    }
+                })
+                .catch(function(err) { console.error('Failed to load footer:', err); });
+        })();
+    </script>
+
+    
     <script>
         // Scroll animations
         const observerOptions = {
