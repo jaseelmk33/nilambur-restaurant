@@ -616,15 +616,44 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+            gap: 3rem;
             margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .footer-section h3 {
             font-family: 'Poppins', sans-serif;
             color: #e4aa0a;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section p i {
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .footer-section p:last-child {
+            margin-bottom: 0;
         }
 
         .footer-logo-section {
@@ -632,6 +661,11 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+        }
+
+        .footer-section:not(.footer-logo-section) {
+            align-items: flex-start;
+            text-align: left;
         }
 
         .footer-logo {
@@ -655,13 +689,13 @@
 
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
         }
 
         .social-icons a {
-            color: #333;
+            color: white;
             font-size: 1.5rem;
             transition: all 0.3s ease;
         }
@@ -913,6 +947,38 @@
 
             .form-group:nth-child(3) .form-icon {
                 top: calc(50% + 1.2rem);
+            }
+
+            /* Footer mobile styles */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section:not(.footer-logo-section) {
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .footer-section h3 {
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .footer-section p {
+                margin-bottom: 0.6rem;
+                font-size: 0.9rem;
             }
 
             .footer {
@@ -1706,14 +1772,14 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section footer-logo-section">
-                <img src="images/white-logo.png" alt="Nilambur Restaurant" class="footer-logo">
+                <img src="images/white-logo.png" alt="Nilambur Restaurant" class="footer-logo" style="width: 150px; height: 150px;">
                 <p>Authentic Kerala cuisine with traditional hospitality</p>
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/iaeQr23PbQNTuxbT7" target="_blank" style="color: #e4aa0a; text-decoration: none;">King Khaled Road, Behind Lulu, Near Eraam Camp, Al Jubail, Saudi Arabia</a></p>
                 <p><i class="fas fa-phone"></i> <a href="tel:+966132345678" style="color: #e4aa0a; text-decoration: none;">+966 13 234 5678</a></p>
-                <p><i class="fas fa-truck"></i> Free Delivery: <a href="tel:+966559342999" style="color: #e4aa0a; text-decoration: none;">+966 559 342 999</a></p>
+                <!-- <p><i class="fas fa-truck"></i> Free Delivery: <a href="tel:+966559342999" style="color: #e4aa0a; text-decoration: none;">+966 559 342 999</a></p> -->
                 <p><i class="fas fa-envelope"></i> nilamburrestaurant@gmail.com</p>
             </div>
             <div class="footer-section">
