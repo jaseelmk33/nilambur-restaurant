@@ -19,7 +19,7 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            background: linear-gradient(135deg, #0d4f3c 0%, #1a5f4a 100%);
+            background: linear-gradient(135deg, #2e7237 0%, #2e7237 100%);
         }
 
         /* Navigation */
@@ -27,11 +27,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(13, 79, 60, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 2rem;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
@@ -43,17 +45,21 @@
         }
 
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #d4af37;
             text-decoration: none;
-            transition: color 0.3s ease;
-            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
         }
 
-        .logo:hover {
-            color: #f4d03f;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .nav-links {
@@ -63,7 +69,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #333;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -71,7 +77,7 @@
         }
 
         .nav-links a:hover {
-            color: #d4af37;
+            color: #e4aa0a;
             transform: translateY(-2px);
         }
 
@@ -82,7 +88,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #d4af37;
+            background: #e4aa0a;
             transition: width 0.3s ease;
         }
 
@@ -102,7 +108,7 @@
         .hamburger span {
             width: 25px;
             height: 3px;
-            background: #d4af37;
+            background: #e4aa0a;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -127,7 +133,7 @@
             left: -100%;
             width: 100%;
             height: calc(100vh - 80px);
-            background: rgba(13, 79, 60, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -155,7 +161,7 @@
         }
 
         .nav-links.mobile a:hover {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(228, 170, 10, 0.2);
             transform: scale(1.05);
         }
 
@@ -170,17 +176,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(13, 79, 60, 0.7), rgba(13, 79, 60, 0.7));
-            z-index: 1;
         }
 
         .hero-background {
@@ -207,53 +202,66 @@
         }
 
         .hero-background::before {
-            animation: heroSlideshow1 16s infinite;
+            animation: heroSlideshow1 18s infinite;
         }
 
         .hero-background::after {
-            animation: heroSlideshow2 16s infinite;
+            animation: heroSlideshow2 18s infinite;
         }
 
         @keyframes heroSlideshow1 {
-            0%, 12.5% {
+            0%, 16.66% {
+                background-image: url('images/hero main.jpg');
+                opacity: 1;
+            }
+            16.66%, 33.33% {
+                background-image: url('images/hero main2.jpg');
+                opacity: 1;
+            }
+            33.33%, 50% {
                 background-image: url('images/pexels-pixabay-262978.jpg');
                 opacity: 1;
             }
-            25%, 37.5% {
+            50%, 66.66% {
                 background-image: url('images/pexels-pixabay-260922.jpg');
                 opacity: 1;
             }
-            50%, 62.5% {
+            66.66%, 83.33% {
                 background-image: url('images/pexels-elletakesphotos-2696064.jpg');
                 opacity: 1;
             }
-            75%, 87.5% {
+            83.33%, 100% {
                 background-image: url('images/pexels-elevate-1267320.jpg');
                 opacity: 1;
-            }
-            12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100% {
-                opacity: 0;
             }
         }
 
         @keyframes heroSlideshow2 {
-            0%, 25%, 50%, 75% {
+            0%, 16.66% {
                 opacity: 0;
             }
-            12.5%, 37.5%, 62.5%, 87.5% {
+            16.66%, 33.33% {
+                background-image: url('images/hero main2.jpg');
                 opacity: 1;
             }
-            12.5%, 25% {
-                background-image: url('images/pexels-pixabay-260922.jpg');
-            }
-            37.5%, 50% {
-                background-image: url('images/pexels-elletakesphotos-2696064.jpg');
-            }
-            62.5%, 75% {
-                background-image: url('images/pexels-elevate-1267320.jpg');
-            }
-            87.5%, 100% {
+            33.33%, 50% {
                 background-image: url('images/pexels-pixabay-262978.jpg');
+                opacity: 1;
+            }
+            50%, 66.66% {
+                background-image: url('images/pexels-pixabay-260922.jpg');
+                opacity: 1;
+            }
+            66.66%, 83.33% {
+                background-image: url('images/pexels-elletakesphotos-2696064.jpg');
+                opacity: 1;
+            }
+            83.33%, 100% {
+                background-image: url('images/pexels-elevate-1267320.jpg');
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
             }
         }
 
@@ -264,6 +272,92 @@
             position: relative;
             z-index: 5;
             padding: 2rem 1rem;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+
+
+
+
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #e4aa0a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideInLeft 1.5s ease-out 0.5s both;
+        }
+
+        .hero-content > div:first-of-type {
+            margin-bottom: 2rem;
+        }
+
+        .hero-content > div:first-of-type p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            animation: slideInRight 1.5s ease-out 1s both;
+        }
+
+        .hero-content > div:nth-of-type(2) p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            animation: slideInRight 1.5s ease-out 1.2s both;
+        }
+
+        /* Delivery Service Section */
+        .delivery-service {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f8f5f0 0%, #fff 100%);
+        }
+
+        .delivery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .delivery-banner {
+            animation: slideInUp 1s ease-out;
+        }
+
+        /* Restaurant Intro Styling */
+        .restaurant-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 2rem 1rem;
+        }
+
+        .restaurant-intro h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #2e7237;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .restaurant-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .restaurant-intro p:last-child {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #888;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         @keyframes fadeInUp {
@@ -277,15 +371,6 @@
             }
         }
 
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: slideInLeft 1.5s ease-out 0.5s both;
-        }
-
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -295,12 +380,6 @@
                 opacity: 1;
                 transform: translateX(0);
             }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: slideInRight 1.5s ease-out 1s both;
         }
 
         @keyframes slideInRight {
@@ -316,15 +395,15 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            color: #0d4f3c;
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
+            color: #2e7237;
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 15px rgba(228, 170, 10, 0.4);
             animation: bounce 2s infinite 2s;
             position: relative;
             z-index: 10;
@@ -339,7 +418,7 @@
 
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 25px rgba(228, 170, 10, 0.6);
         }
 
         /* Explore Menus Button */
@@ -347,15 +426,15 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            background: linear-gradient(45deg, #0d4f3c, #1a5f4a);
-            color: #d4af37;
+            background: linear-gradient(45deg, #2e7237, #2e7237);
+            color: #e4aa0a;
             padding: 1.2rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(13, 79, 60, 0.3);
+            box-shadow: 0 8px 25px rgba(46, 114, 55, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -367,7 +446,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(228, 170, 10, 0.2), transparent);
             transition: left 0.5s ease;
         }
 
@@ -377,8 +456,8 @@
 
         .explore-menus-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(13, 79, 60, 0.4);
-            background: linear-gradient(45deg, #1a5f4a, #0d4f3c);
+            box-shadow: 0 15px 35px rgba(46, 114, 55, 0.4);
+            background: linear-gradient(45deg, #2e7237, #2e7237);
         }
 
         .explore-menus-btn i:first-child {
@@ -446,7 +525,7 @@
         .section-title {
             font-family: 'Poppins', sans-serif;
             font-size: 3rem;
-            color: #0d4f3c;
+            color: #2e7237;
             margin-bottom: 3rem;
             position: relative;
             display: inline-block;
@@ -460,7 +539,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
             border-radius: 2px;
         }
 
@@ -488,7 +567,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(228, 170, 10, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -503,7 +582,7 @@
 
         .feature-icon {
             font-size: 3rem;
-            color: #d4af37;
+            color: #e4aa0a;
             margin-bottom: 1rem;
             animation: pulse 2s infinite;
         }
@@ -516,7 +595,7 @@
 
         .feature-card h3 {
             font-size: 1.5rem;
-            color: #0d4f3c;
+            color: #2e7237;
             margin-bottom: 1rem;
         }
 
@@ -527,7 +606,7 @@
 
         /* Footer */
         .footer {
-            background: #0d4f3c;
+            background: #2e7237;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -537,22 +616,82 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+            gap: 3rem;
             margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .footer-section h3 {
             font-family: 'Poppins', sans-serif;
-            color: #d4af37;
+            color: #e4aa0a;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section p i {
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .footer-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-section:not(.footer-logo-section) {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .footer-logo {
+            height: 80px;
+            width: auto;
             margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .footer-logo-section p {
+            font-size: 0.9rem;
+            color: #ccc;
+            font-style: italic;
+            margin: 0;
         }
 
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
         }
 
         .social-icons a {
@@ -562,21 +701,21 @@
         }
 
         .social-icons a:hover {
-            color: #d4af37;
+            color: #e4aa0a;
             transform: translateY(-3px);
         }
 
         /* Developer Credit Link */
         .developer-link {
-            color: #d4af37;
+            color: #e4aa0a;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
         }
 
         .developer-link:hover {
-            color: #f4d03f;
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+            color: #e4aa0a;
+            text-shadow: 0 0 8px rgba(228, 170, 10, 0.5);
             transform: translateY(-1px);
         }
 
@@ -608,10 +747,18 @@
                 margin: 0 auto;
             }
 
+
+
             .hero h1 {
                 font-size: 2rem;
                 line-height: 1.2;
                 margin-bottom: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
             }
 
             .hero p {
@@ -620,9 +767,15 @@
                 margin: 1rem 0;
             }
 
+            .hero-content p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+
             .hero-content > div {
-                padding: 1rem;
-                margin: 1rem 0;
+                max-width: 95%;
+                padding: 0 1rem;
             }
 
             .hero-content > div p {
@@ -646,31 +799,63 @@
                 line-height: 1.4;
             }
 
-            /* Delivery banner mobile styles */
-            .hero-content > div:nth-of-type(2) {
-                padding: 1rem;
-                margin: 1.5rem 0;
+            /* Delivery Service Section Mobile Styles */
+            .delivery-service {
+                padding: 2rem 1rem;
             }
 
-            .hero-content > div:nth-of-type(2) h3 {
-                font-size: 1.1rem !important;
+            .restaurant-intro {
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .restaurant-intro h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                line-height: 1.3;
+            }
+
+            .restaurant-intro p {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .restaurant-intro p:last-child {
+                font-size: 0.95rem;
+            }
+
+            .delivery-banner {
+                margin: 1rem auto !important;
+                padding: 1.5rem !important;
+            }
+
+            .delivery-banner h3 {
+                font-size: 1.2rem !important;
                 margin-bottom: 0.8rem !important;
             }
 
-            .hero-content > div:nth-of-type(2) p {
+            .delivery-banner p {
                 font-size: 0.9rem !important;
                 margin-bottom: 0.8rem !important;
                 line-height: 1.4;
             }
 
-            .hero-content > div:nth-of-type(2) p:last-child {
-                font-size: 1rem !important;
+            .delivery-banner p:last-child {
+                font-size: 1.1rem !important;
             }
 
             .cta-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
                 margin-top: 1.5rem;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .footer-logo {
+                height: 60px;
             }
 
             .section-title {
@@ -764,6 +949,38 @@
                 top: calc(50% + 1.2rem);
             }
 
+            /* Footer mobile styles */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section:not(.footer-logo-section) {
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .footer-section h3 {
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .footer-section p {
+                margin-bottom: 0.6rem;
+                font-size: 0.9rem;
+            }
+
             .footer {
                 padding: 2rem 1rem;
             }
@@ -836,17 +1053,17 @@
         .dish-card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            border-color: #d4af37;
+            border-color: #e4aa0a;
         }
 
         .dish-image {
             height: 200px;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            color: #0d4f3c;
+            color: #2e7237;
             position: relative;
             overflow: hidden;
             background-size: cover;
@@ -865,7 +1082,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(212, 175, 55, 0.3), rgba(13, 79, 60, 0.3));
+            background: linear-gradient(45deg, rgba(228, 170, 10, 0.3), rgba(46, 114, 55, 0.3));
             z-index: 1;
         }
 
@@ -895,7 +1112,7 @@
         .dish-name {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #0d4f3c;
+            color: #2e7237;
             margin-bottom: 1rem;
         }
 
@@ -913,8 +1130,8 @@
         }
 
         .dish-tag {
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            color: #0d4f3c;
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
+            color: #2e7237;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -923,20 +1140,20 @@
 
         .dish-tag.spicy {
             background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
+            color: #333;
         }
 
         .dish-tag.popular {
             background: linear-gradient(45deg, #8e44ad, #9b59b6);
-            color: white;
+            color: #333;
             animation: pulse 2s infinite;
         }
 
         /* Customer Reviews Section */
         .reviews {
             padding: 5rem 2rem;
-            background: #0d4f3c;
-            color: white;
+            background: #2e7237;
+            color: #333;
             position: relative;
         }
 
@@ -971,7 +1188,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(228, 170, 10, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -982,11 +1199,11 @@
         .review-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-color: #d4af37;
+            border-color: #e4aa0a;
         }
 
         .review-stars {
-            color: #d4af37;
+            color: #e4aa0a;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -1009,18 +1226,18 @@
         .author-avatar {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #0d4f3c;
+            color: #2e7237;
             font-weight: 700;
         }
 
         .author-info h4 {
-            color: #d4af37;
+            color: #e4aa0a;
             margin-bottom: 0.3rem;
         }
 
@@ -1057,8 +1274,8 @@
         /* Contact Form Section */
         .contact-form-section {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, #0d4f3c 0%, #1a5f4a 100%);
-            color: white;
+            background: linear-gradient(135deg, #2e7237 0%, #2e7237 100%);
+            color: #333;
             position: relative;
         }
 
@@ -1087,7 +1304,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(228, 170, 10, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -1104,7 +1321,7 @@
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #d4af37;
+            color: #e4aa0a;
             font-weight: 600;
             font-size: 1.1rem;
         }
@@ -1112,10 +1329,10 @@
         .form-input {
             width: 100%;
             padding: 1rem 1.5rem;
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            border: 2px solid rgba(228, 170, 10, 0.3);
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: #333;
             font-size: 1rem;
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
@@ -1124,10 +1341,10 @@
 
         .form-input:focus {
             outline: none;
-            border-color: #d4af37;
+            border-color: #e4aa0a;
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 25px rgba(228, 170, 10, 0.2);
         }
 
         .form-input::placeholder {
@@ -1140,8 +1357,8 @@
         }
 
         .submit-btn {
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            color: #0d4f3c;
+            background: linear-gradient(45deg, #e4aa0a, #e4aa0a);
+            color: #2e7237;
             border: none;
             padding: 1.2rem 3rem;
             border-radius: 50px;
@@ -1150,7 +1367,7 @@
             font-family: 'Poppins', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 25px rgba(228, 170, 10, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -1172,7 +1389,7 @@
 
         .submit-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 15px 35px rgba(228, 170, 10, 0.6);
         }
 
         .submit-btn:active {
@@ -1184,14 +1401,14 @@
             right: 1rem;
             top: calc(50% + 1rem);
             transform: translateY(-50%);
-            color: #d4af37;
+            color: #e4aa0a;
             font-size: 1.2rem;
             pointer-events: none;
         }
 
         .whatsapp-info {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(228, 170, 10, 0.1);
+            border: 1px solid rgba(228, 170, 10, 0.3);
             padding: 1.5rem;
             border-radius: 15px;
             margin-top: 2rem;
@@ -1244,7 +1461,9 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Nilambur Restaurant</a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Nilambur Restaurant" class="logo-img">
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -1267,26 +1486,39 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="floating-element">
-            <i class="fas fa-star" style="color: #d4af37; font-size: 2rem; opacity: 0.7;"></i>
+            <i class="fas fa-star" style="color: #e4aa0a; font-size: 2rem; opacity: 0.7;"></i>
         </div>
         <div class="floating-element">
-            <i class="fas fa-moon" style="color: #d4af37; font-size: 1.5rem; opacity: 0.6;"></i>
+            <i class="fas fa-moon" style="color: #e4aa0a; font-size: 1.5rem; opacity: 0.6;"></i>
         </div>
         <div class="floating-element">
-            <i class="fas fa-utensils" style="color: #d4af37; font-size: 1.8rem; opacity: 0.5;"></i>
+            <i class="fas fa-utensils" style="color: #e4aa0a; font-size: 1.8rem; opacity: 0.5;"></i>
         </div>
         
         <div class="hero-content">
-          
-            <p>Experience the authentic flavors of Kerala in an atmosphere of traditional hospitality and modern elegance</p>
-            <div style="background: linear-gradient(45deg, #d4af37, #f4d03f); color: #0d4f3c; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); position: relative;">
-                <h3 style="margin-bottom: 1rem; font-size: 1.3rem;"><i class="fas fa-truck"></i> FREE Food Delivery Service</h3>
-                <p style="margin-bottom: 1rem; font-size: 1.1rem;">At a time when cash-on-delivery is more important than food… we are with you<br>For the very first time in Jubail</p>
-                <p style="margin-bottom: 1rem; font-weight: 600;">Just pay for what you eat – that's our Nilambur Policy <i class="fas fa-handshake"></i></p>
-                <p style="font-size: 1.2rem; font-weight: 700;"><i class="fas fa-phone"></i> Free Delivery: <a href="tel:+966559342999" style="color: #0d4f3c; text-decoration: none;">+966 559 342 999</a></p>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Authentic Kerala Cuisine</h1>
+                <p style="color: white; font-size: 1.3rem; line-height: 1.6; font-weight: 400; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); margin-bottom: 2rem;">Traditional recipes passed down through generations</p>
+                <a href="menu.html" class="cta-button">Explore All Menu</a>
             </div>
-            <div style="margin-top: 2rem; position: relative; z-index: 10;">
-                <a href="menu.html" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Delivery Service Section -->
+    <section class="delivery-service">
+        <div class="delivery-container">
+            <!-- Restaurant Description -->
+            <div class="restaurant-intro">
+                <h2>Taste South India's authentic flavors! 😋</h2>
+                <p>Enjoy curries, dosas, snacks, and seasonal varieties in a cozy, welcoming setting.</p>
+                <p>Experience the authentic flavors of Kerala in an atmosphere of traditional hospitality and modern elegance</p>
+            </div>
+            
+            <div class="delivery-banner" style="background: linear-gradient(45deg, #e4aa0a, #e4aa0a); color: #2e7237; padding: 2rem; margin: 2rem auto; max-width: 1200px; border-radius: 20px; box-shadow: 0 10px 30px rgba(228, 170, 10, 0.3); text-align: center; position: relative;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-truck"></i> FREE Food Delivery Service</h3>
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;">At a time when cash-on-delivery is more important than food… we are with you<br>For the very first time in Jubail</p>
+                <p style="margin-bottom: 1rem; font-weight: 600; font-size: 1.1rem;">Just pay for what you eat – that's our Nilambur Policy <i class="fas fa-handshake"></i></p>
+                <p style="font-size: 1.3rem; font-weight: 700;"><i class="fas fa-phone"></i> Free Delivery: <a href="tel:+966559342999" style="color: #2e7237; text-decoration: none;">+966 559 342 999</a></p>
             </div>
         </div>
     </section>
@@ -1324,7 +1556,7 @@
     <!-- Popular Dishes Section -->
     <section class="popular-dishes">
         <div class="section-decoration top-left">
-            <i class="fas fa-utensils" style="font-size: 4rem; color: #d4af37;"></i>
+            <i class="fas fa-utensils" style="font-size: 4rem; color: #e4aa0a;"></i>
         </div>
         <div class="section-decoration bottom-right">
             <i class="fas fa-pepper-hot" style="font-size: 4rem; color: #e74c3c;"></i>
@@ -1343,9 +1575,9 @@
                         <h3 class="dish-name">Beef Roast</h3>
                         <p class="dish-description">Slow-cooked beef pieces roasted with coconut, spices, and curry leaves until perfectly tender. A true Kerala delicacy that melts in your mouth.</p>
                         <div class="dish-tags">
-                            <span class="dish-tag popular">Most Popular</span>
-                            <span class="dish-tag spicy">Spicy</span>
-                            <span class="dish-tag">Traditional</span>
+                            <span class="dish-tag popular" style="color: white;">Most Popular</span>
+                            <span class="dish-tag spicy" style="color: white;">Spicy</span>
+                            <span class="dish-tag" style="color: white;">Traditional</span>
                         </div>
                     </div>
                 </div>
@@ -1358,9 +1590,9 @@
                         <h3 class="dish-name">Kappa Biryani</h3>
                         <p class="dish-description">Unique Kerala-style biryani made with tapioca instead of rice, layered with spiced meat. An innovative dish that's exclusive to our region.</p>
                         <div class="dish-tags">
-                            <span class="dish-tag">Specialty</span>
-                            <span class="dish-tag popular">Chef's Choice</span>
-                            <span class="dish-tag">Unique</span>
+                            <span class="dish-tag" style="color: white;">Specialty</span>
+                            <span class="dish-tag popular" style="color: white;">Chef's Choice</span>
+                            <span class="dish-tag" style="color: white;">Unique</span>
                         </div>
                     </div>
                 </div>
@@ -1373,9 +1605,9 @@
                         <h3 class="dish-name">Kothu Porotta</h3>
                         <p class="dish-description">Shredded porotta stir-fried with spices, vegetables, and your choice of meat or egg. A popular street food that has become a restaurant favorite.</p>
                         <div class="dish-tags">
-                            <span class="dish-tag">Street Food</span>
-                            <span class="dish-tag">Traditional</span>
-                            <span class="dish-tag">Popular</span>
+                            <span class="dish-tag" style="color: white;">Street Food</span>
+                            <span class="dish-tag" style="color: white;">Traditional</span>
+                            <span class="dish-tag" style="color: white;">Popular</span>
                         </div>
                     </div>
                 </div>
@@ -1399,11 +1631,11 @@
             <i class="fab fa-whatsapp" style="font-size: 4rem; color: #25d366;"></i>
         </div>
         <div class="section-decoration bottom-right">
-            <i class="fas fa-paper-plane" style="font-size: 4rem; color: #d4af37;"></i>
+            <i class="fas fa-paper-plane" style="font-size: 4rem; color: #e4aa0a;"></i>
         </div>
         
         <div class="contact-form-container">
-            <h2 class="section-title scroll-animation" style="color: #d4af37;">Get In Touch</h2>
+            <h2 class="section-title scroll-animation" style="color: #e4aa0a;">Get In Touch</h2>
             <p class="scroll-animation" style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">Have a question or want to make a reservation? Send us a message and we'll get back to you right away!</p>
             
             <form class="contact-form scroll-animation" id="contactForm">
@@ -1416,7 +1648,7 @@
                         id="name" 
                         name="name" 
                         class="form-input" 
-                        placeholder="Enter your full name" 
+                        placeholder="full name" 
                         required
                     >
                     <i class="fas fa-user form-icon"></i>
@@ -1431,7 +1663,7 @@
                         id="mobile" 
                         name="mobile" 
                         class="form-input" 
-                        placeholder="Enter your mobile number" 
+                        placeholder="mobile number" 
                         required
                     >
                     <i class="fas fa-phone form-icon"></i>
@@ -1445,7 +1677,7 @@
                         id="enquiry" 
                         name="enquiry" 
                         class="form-input form-textarea" 
-                        placeholder="Tell us about your enquiry, reservation, or any questions you have..."
+                        placeholder="Tell us ..."
                         required
                     ></textarea>
                     <i class="fas fa-comment-dots form-icon" style="top: calc(50% + 1.5rem);"></i>
@@ -1468,14 +1700,14 @@
     <!-- Customer Reviews Section -->
     <section class="reviews">
         <div class="section-decoration top-left">
-            <i class="fas fa-quote-left" style="font-size: 4rem; color: #d4af37;"></i>
+            <i class="fas fa-quote-left" style="font-size: 4rem; color: #e4aa0a;"></i>
         </div>
         <div class="section-decoration bottom-right">
-            <i class="fas fa-heart" style="font-size: 4rem; color: #d4af37;"></i>
+            <i class="fas fa-heart" style="font-size: 4rem; color: #e4aa0a;"></i>
         </div>
         
         <div class="reviews-container">
-            <h2 class="section-title scroll-animation" style="color: #d4af37;">What Our Customers Say</h2>
+            <h2 class="section-title scroll-animation" style="color: #e4aa0a;">What Our Customers Say</h2>
             <p class="scroll-animation" style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">Read what our valued customers have to say about their dining experience at Nilambur Restaurant</p>
             
             <div class="reviews-grid">
@@ -1539,11 +1771,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
+            <div class="footer-section footer-logo-section">
+                <img src="images/white-logo.png" alt="Nilambur Restaurant" class="footer-logo" style="width: 150px; height: 150px;">
+                <p>Authentic Kerala cuisine with traditional hospitality</p>
+            </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/iaeQr23PbQNTuxbT7" target="_blank" style="color: #d4af37; text-decoration: none;">King Khaled Road, Behind Lulu, Near Eraam Camp, Al Jubail, Saudi Arabia</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+966132345678" style="color: #d4af37; text-decoration: none;">+966 13 234 5678</a></p>
-                <p><i class="fas fa-truck"></i> Free Delivery: <a href="tel:+966559342999" style="color: #d4af37; text-decoration: none;">+966 559 342 999</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/iaeQr23PbQNTuxbT7" target="_blank" style="color: #e4aa0a; text-decoration: none;">King Khaled Road, Behind Lulu, Near Eraam Camp, Al Jubail, Saudi Arabia</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+966132345678" style="color: #e4aa0a; text-decoration: none;">+966 13 234 5678</a></p>
+                <!-- <p><i class="fas fa-truck"></i> Free Delivery: <a href="tel:+966559342999" style="color: #e4aa0a; text-decoration: none;">+966 559 342 999</a></p> -->
                 <p><i class="fas fa-envelope"></i> nilamburrestaurant@gmail.com</p>
             </div>
             <div class="footer-section">
@@ -1593,10 +1829,10 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(13, 79, 60, 0.98)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
                 navbar.style.padding = '0.5rem 2rem';
             } else {
-                navbar.style.background = 'rgba(13, 79, 60, 0.95)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.padding = '1rem 2rem';
             }
         });
@@ -1658,7 +1894,7 @@
             
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
-                submitBtn.style.background = 'linear-gradient(45deg, #d4af37, #f4d03f)';
+                submitBtn.style.background = 'linear-gradient(45deg, #e4aa0a, #e4aa0a)';
             }, 3000);
         });
 
