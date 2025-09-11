@@ -920,26 +920,85 @@
                 padding: 3rem 1rem;
             }
 
+            .reviews-container {
+                padding: 0 1rem;
+            }
+
             .reviews-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
                 justify-items: center;
+                padding: 0;
             }
 
             .review-card {
                 margin: 0 auto;
                 padding: 2rem 1.5rem;
-                max-width: 400px;
-                width: 100%;
+                max-width: 350px;
+                width: calc(100% - 2rem);
+                box-sizing: border-box;
             }
 
             .review-author {
                 flex-direction: column;
                 gap: 0.5rem;
+                text-align: center;
+            }
+
+            .review-text {
+                text-align: center;
+            }
+
+            .review-stars {
+                text-align: center;
             }
 
             .section-decoration {
                 display: none;
+            }
+        }
+
+        /* Additional mobile styles for smaller screens */
+        @media (max-width: 480px) {
+            .reviews {
+                padding: 2rem 0.5rem;
+            }
+
+            .reviews-container {
+                padding: 0 0.5rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                justify-items: center;
+                padding: 0;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review-card {
+                margin: 0 auto;
+                padding: 1.5rem 1rem;
+                max-width: 320px;
+                width: calc(100vw - 3rem);
+                box-sizing: border-box;
+                display: block;
+            }
+        }
+
+        /* iPhone specific adjustments */
+        @media (max-width: 390px) {
+            .review-card {
+                max-width: 300px;
+                width: calc(100vw - 2rem);
+                padding: 1.5rem 1rem;
+            }
+
+            .reviews {
+                padding: 2rem 0.25rem;
             }
 
             .contact-form {
@@ -1038,6 +1097,77 @@
                 margin-top: 0.8rem;
             }
         }
+
+        /* Responsive review cards for different mobile sizes */
+        @media (max-width: 768px) {
+            .reviews {
+                padding: 1.5rem 0.5rem !important;
+                margin: 0 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            .reviews-container {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .reviews-grid {
+                width: 100% !important;
+                max-width: 380px !important;
+                margin: 0 auto !important;
+                padding: 0 0.5rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+
+            .review-card {
+                width: 100% !important;
+                max-width: 320px !important;
+                margin: 0 auto !important;
+                padding: 1.5rem 1rem !important;
+                box-sizing: border-box !important;
+            }
+        }
+
+        /* Smaller mobile devices */
+        @media (max-width: 480px) {
+            .reviews-grid {
+                max-width: 300px !important;
+                padding: 0 0.25rem !important;
+            }
+
+            .review-card {
+                max-width: 280px !important;
+                padding: 1.25rem 0.75rem !important;
+            }
+        }
+
+        /* Very small mobile devices (iPhone SE, etc.) */
+        @media (max-width: 375px) {
+            .reviews-grid {
+                max-width: 280px !important;
+                padding: 0 0.25rem !important;
+            }
+
+            .review-card {
+                max-width: 260px !important;
+                padding: 1rem 0.75rem !important;
+            }
+        }
+
+
+
+
 
         /* Scroll animations */
         .scroll-animation {
